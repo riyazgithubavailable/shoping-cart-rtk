@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React,{useState,useEffect} from 'react'
+
+import React,{useEffect} from 'react'
 import { addProduct } from '../redux/features/cartSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { fetchProducts } from '../redux/features/producSlice';
@@ -19,7 +19,7 @@ const Products = () => {
         // }).catch((error) =>{
         //     console.log(error);
         // })
-    },[]);
+    },[dispatch]);
 
           function handleAdd(product) {
             dispatch(addProduct(product))
