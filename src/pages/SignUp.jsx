@@ -8,13 +8,28 @@ const SignUp = () => {
     const email= useRef()
     const password = useRef()
     const [show,setShow] = useState(false)
-    
+
+    const [visible,setVisible] = useState(false)
+
     const navigate = useNavigate()
+    
+   
+    
+       
+     
   
     function handleClick (e) {
         e.preventDefault()
         
         if(name.current.value && email.current.value && password.current.value ){
+               // email varification
+    const isValidEmail = /\S+@\S+\.\S+/.test(email.current.value);
+
+    console.log(isValidEmail);
+            if(!isValidEmail){
+                toast.error('Invalid Email')
+                return;
+            }
             localStorage.setItem("name", name.current.value)
             localStorage.setItem("email", email.current.value)
             localStorage.setItem("password", password.current.value)
@@ -35,23 +50,23 @@ const SignUp = () => {
         </div>
         <form className='my-2'>
             <div className='flex border-b-black border-b-2 mx-5 my-7 py-1 '>
-                <input type='text' ref={name} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Enter Your Name' />
+                <input type='text' ref={name} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Enter Your Name' required />
                 <div className='w-2/12 flex item-center justify-center'>
                 <i className="fa-solid fa-user text-xl"></i>
                 </div>
             </div>
 
             <div className='flex border-b-black border-b-2 mx-5 my-7 py-1 '>
-                <input type='email' ref={email} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Enter Your Email Address' />
+                <input type='email' ref={email}  className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Enter Your Email Address' required/>
                 <div className='w-2/12 flex item-center justify-center'>
                 <i className="fa-solid fa-envelope text-xl"></i>
                 </div>
             </div>
 
             <div className='flex border-b-black border-b-2 mx-5 my-7 py-1 '>
-                <input type='password' ref={password} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Create a strong password' />
-                <div className='w-2/12 flex item-center justify-center'>
-                <i className="fa-solid fa-lock text-xl"></i>
+                <input type={visible ? "text" : "password"} ref={password} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Create a strong password' required/>
+                <div className='w-2/12 flex item-center justify-center' onClick={() => setVisible(!visible)}>
+                 {visible ? (<i class="fa-solid fa-eye"></i>):(<i class="fa-solid fa-eye-slash"></i>)}
                 </div>
             </div>
             <div className='mx-5 my-7 py-2'> 

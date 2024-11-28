@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
     const email = useRef();
     const password = useRef();
-    
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
+    const [visible,setVisible] = useState(false)
     function handleLogin(e) {
         e.preventDefault();
         const storedEmail = localStorage.getItem('email');
@@ -43,14 +43,9 @@ const Login = () => {
                     </div>
 
                     <div className='flex border-b-black border-b-2 mx-5 my-7 py-1'>
-                        <input
-                            type='password'
-                            ref={password}
-                            className='w-11/12 bg-transparent outline-none placeholder-black'
-                            placeholder='Create a strong password'
-                        />
-                        <div className='w-2/12 flex item-center justify-center'>
-                            <i className="fa-solid fa-lock text-xl"></i>
+                        <input type={visible ? "text" : "password"} ref={password} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Create a strong password' />
+                        <div className='w-2/12 flex item-center justify-center' onClick={() => setVisible(!visible)}>
+                            {visible ? (<i class="fa-solid fa-eye"></i>) : (<i class="fa-solid fa-eye-slash"></i>)}
                         </div>
                     </div>
 

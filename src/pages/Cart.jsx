@@ -141,13 +141,13 @@ const Cart = () => {
                         },
                       ],
                       merchantInfo: {
-                        merchantId: "12345678901234567890", // Use a valid merchant ID
+                        merchantId: "12345678901234567890",
                         merchantName: "Test Merchant",
                       },
                       transactionInfo: {
                         totalPriceStatus: "FINAL",
                         totalPriceLabel: "Total",
-                        totalPrice: cart.cartTotalAmount.toFixed(2), // Ensure it's a string
+                        totalPrice: cart.cartTotalAmount.toFixed(2),
                         currencyCode: "INR",
                         countryCode: "IN",
                       },
