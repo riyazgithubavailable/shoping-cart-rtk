@@ -25,7 +25,7 @@ const SignUp = () => {
                // email varification
     const isValidEmail = /\S+@\S+\.\S+/.test(email.current.value);
 
-    console.log(isValidEmail);
+   
             if(!isValidEmail){
                 toast.error('Invalid Email')
                 return;
@@ -66,7 +66,7 @@ const SignUp = () => {
             <div className='flex border-b-black border-b-2 mx-5 my-7 py-1 '>
                 <input type={visible ? "text" : "password"} ref={password} className='w-11/12 bg-transparent outline-none placeholder-black' placeholder='Create a strong password' required/>
                 <div className='w-2/12 flex item-center justify-center' onClick={() => setVisible(!visible)}>
-                 {visible ? (<i class="fa-solid fa-eye"></i>):(<i class="fa-solid fa-eye-slash"></i>)}
+                 {visible ? (<i className="fa-solid fa-eye"></i>):(<i className="fa-solid fa-eye-slash"></i>)}
                 </div>
             </div>
             <div className='mx-5 my-7 py-2'> 
