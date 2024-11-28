@@ -60,7 +60,7 @@ body {
 }
 .log-btn{
   height: auto;
-  width: 30%;
+  width: 40%;
   
 }
 .heading {
@@ -126,6 +126,7 @@ body {
   }
   .heading {
     padding: 20px 0;
+    margin-left: 1rem;
   }
 }
 
@@ -146,8 +147,8 @@ body {
  .log-btn{
   position: absolute;
   top: 10px;
-  left:25%;
-  width: 20%;
+  left:20%;
+  width: 10%;
   
  }
   .cartCount {
@@ -156,4 +157,10 @@ body {
   img {
     height: 60px;
   }
+  .heading{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+  }
+
 }
