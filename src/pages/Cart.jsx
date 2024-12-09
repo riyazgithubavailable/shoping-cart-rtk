@@ -84,7 +84,7 @@ const Cart = () => {
                         className="btn"
                         onClick={() => handleRemoveFromCart(cartItem)}
                       >
-                        Remove
+                        Remove 
                       </button>
                     </div>
                   </div>
