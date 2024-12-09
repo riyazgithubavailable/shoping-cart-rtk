@@ -29,7 +29,7 @@ const Navbaar = () => {
     }}>
       <span className='logo'>
         <img style={{ width: '40px', height: '40px', borderRadius: '50%' }}
-          src='https://img.freepik.com/premium-vector/woman-avatar-with-online-shopping-icon-pop-art-style_24911-19045.jpg?w=740' alt='my-store' />
+          src='https://cdn.3dnames.co/previews/wt04/500x500/r/wt04riyaz3dxx.webp' alt='my-store' />
       </span><h2 style={{ position: 'absolute', left: '4rem', top: '0.5rem', fontWeight: 'bold' }}>Online Shopping</h2>
       <div style={{ marginRight: '2rem', display: 'flex', justifyContent: 'space-between', gap: '0.8rem' }}>
         <div className='btn-div' >
